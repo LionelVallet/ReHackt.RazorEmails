@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Lionel Vallet</Authors>
+    <Company>ReHackt</Company>
+    <Copyright>Lionel Vallet</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/LionelVallet/ReHackt.RazorEmails</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/LionelVallet/ReHackt.RazorEmails</RepositoryUrl>
+    <PackageTags>aspnetcore, email, razor, smtp</PackageTags>
+    <PackageReleaseNotes>https://github.com/LionelVallet/ReHackt.RazorEmails/releases</PackageReleaseNotes>
+    <Description>Provides an email layout to create email templates with Razor and tag helpers, and a service to send emails using SMTP.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Services\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="2.9.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.9" />
+    <PackageReference Include="ReHackt.Extensions.Options.Validation" Version="3.1.9" />
+  </ItemGroup>
+
+</Project>
