@@ -123,7 +123,7 @@ services..AddRazorEmails(options => options.Sender.Name = "no-reply@rehackt.com"
 
 ### All options
 
-``` json
+``` js
 {
   "EmailOptions": {
     // [Sender]
