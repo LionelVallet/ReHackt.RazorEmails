@@ -12,7 +12,7 @@
     <PackageTags>aspnetcore, email, razor, smtp</PackageTags>
     <PackageReleaseNotes>https://github.com/LionelVallet/ReHackt.RazorEmails/releases</PackageReleaseNotes>
     <Description>Provides an email layout to create email templates with Razor and tag helpers, and a service to send emails using SMTP.</Description>
-    <Version>1.1.0</Version>
+    <Version>3.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
