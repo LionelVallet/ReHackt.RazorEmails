@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Authors>Lionel Vallet</Authors>
     <Company>ReHackt</Company>
@@ -12,7 +12,7 @@
     <PackageTags>aspnetcore, email, razor, smtp</PackageTags>
     <PackageReleaseNotes>https://github.com/LionelVallet/ReHackt.RazorEmails/releases</PackageReleaseNotes>
     <Description>Provides an email layout to create email templates with Razor and tag helpers, and a service to send emails using SMTP.</Description>
-    <Version>5.0.3</Version>
+    <Version>6.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,11 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="2.14.0" />
+    <PackageReference Include="MailKit" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
     <PackageReference Include="ReHackt.Extensions.Options.Validation" Version="5.0.0" />
   </ItemGroup>
 
