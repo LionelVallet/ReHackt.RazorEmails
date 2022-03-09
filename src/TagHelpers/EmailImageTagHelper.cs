@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿// Copyright (c) Lionel Vallet. All rights reserved.
+// Licensed under the Apache License, Version 2.0.
+
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace ReHackt.RazorEmails.TagHelpers
 {

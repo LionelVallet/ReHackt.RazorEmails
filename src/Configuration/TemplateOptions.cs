@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// Copyright (c) Lionel Vallet. All rights reserved.
+// Licensed under the Apache License, Version 2.0.
+
+using System.ComponentModel.DataAnnotations;
 
 namespace ReHackt.RazorEmails.Configuration
 {

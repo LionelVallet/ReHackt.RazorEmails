@@ -1,7 +1,9 @@
-﻿using ReHackt.RazorEmails.Configuration;
+﻿// Copyright (c) Lionel Vallet. All rights reserved.
+// Licensed under the Apache License, Version 2.0.
+
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Options;
-using System.Threading.Tasks;
+using ReHackt.RazorEmails.Configuration;
 
 namespace ReHackt.RazorEmails.TagHelpers
 {

@@ -1,10 +1,12 @@
-﻿using MailKit.Net.Smtp;
+﻿// Copyright (c) Lionel Vallet. All rights reserved.
+// Licensed under the Apache License, Version 2.0.
+
+using MailKit.Net.Smtp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ReHackt.RazorEmails.Configuration;
 using ReHackt.RazorEmails.Services;
-using System;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -49,7 +51,7 @@ namespace Microsoft.Extensions.DependencyInjection
             return optionsBuilder
                     .ValidateDataAnnotationsRecursively()
                     .Validate<ILogger<EmailService>>(ValidateSmtpOptions, "Failed to connect to SMTP server")
-                    .ValidateEagerly();
+                    .ValidateOnStart();
         }
 
         private static bool ValidateSmtpOptions(EmailOptions options, ILogger<EmailService> logger)
