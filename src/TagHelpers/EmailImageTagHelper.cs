@@ -8,11 +8,11 @@ namespace ReHackt.RazorEmails.TagHelpers
     [HtmlTargetElement("email-img", Attributes = nameof(Src), TagStructure = TagStructure.WithoutEndTag)]
     public class EmailImageTagHelper : TagHelper
     {
-        public string Alt { get; set; }
+        public string? Alt { get; set; }
 
-        public string Href { get; set; }
+        public string? Href { get; set; }
 
-        public string Src { get; set; }
+        public string? Src { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {

@@ -12,12 +12,12 @@ namespace ReHackt.RazorEmails.TagHelpers
     {
         public EmailAnchorTagHelper(IOptionsMonitor<EmailOptions> emailOptions)
         {
-            Color = emailOptions.CurrentValue.Template.LinkColor;
+            Color = emailOptions.CurrentValue.Template?.LinkColor;
         }
 
-        public string Color { get; set; }
+        public string? Color { get; set; }
 
-        public string Href { get; set; }
+        public string? Href { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {

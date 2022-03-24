@@ -12,15 +12,16 @@ namespace ReHackt.RazorEmails.TagHelpers
     {
         public EmailButtonTagHelper(IOptionsMonitor<EmailOptions> emailOptions)
         {
-            BackgroundColor = emailOptions.CurrentValue.Template.ButtonBackgroundColor;
-            Color = emailOptions.CurrentValue.Template.ButtonTextColor;
+            var template = emailOptions.CurrentValue.Template;
+            BackgroundColor = template?.ButtonBackgroundColor;
+            Color = template?.ButtonTextColor;
         }
 
-        public string BackgroundColor { get; set; }
+        public string? BackgroundColor { get; set; }
 
-        public string Color { get; set; }
+        public string? Color { get; set; }
 
-        public string Href { get; set; }
+        public string? Href { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {

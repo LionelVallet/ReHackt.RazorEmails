@@ -9,14 +9,14 @@ namespace ReHackt.RazorEmails.Configuration
     {
         [Required]
         [EmailAddress]
-        public string SenderEmail { get; set; }
+        public string? SenderEmail { get; set; }
 
-        public string SenderName { get; set; }
-
-        [Required]
-        public SmtpOptions Smtp { get; set; }
+        public string? SenderName { get; set; }
 
         [Required]
-        public TemplateOptions Template { get; set; }
+        public SmtpOptions? Smtp { get; set; }
+
+        [Required]
+        public TemplateOptions? Template { get; set; }
     }
 }

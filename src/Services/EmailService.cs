@@ -26,15 +26,16 @@ namespace ReHackt.RazorEmails.Services
             _razorViewToStringRenderer = razorViewToStringRenderer;
         }
 
-        public async Task SendEmailAsync(string subject, string body, string recipientEmail, string recipientName = null)
+        public async Task SendEmailAsync(string subject, string body, string recipientEmail, string? recipientName = null)
         {
             try
             {
+                var smtpOptions = _emailOptions.Smtp!;
                 using var client = new SmtpClient();
-                await client.ConnectAsync(_emailOptions.Smtp.Host, _emailOptions.Smtp.Port, _emailOptions.Smtp.EnableSsl);
-                if (!string.IsNullOrEmpty(_emailOptions.Smtp.Username))
+                await client.ConnectAsync(smtpOptions.Host, smtpOptions.Port, smtpOptions.EnableSsl);
+                if (!string.IsNullOrEmpty(smtpOptions.Username))
                 {
-                    await client.AuthenticateAsync(_emailOptions.Smtp.Username, _emailOptions.Smtp.Password);
+                    await client.AuthenticateAsync(smtpOptions.Username, smtpOptions.Password);
                 }
                 await client.SendAsync(new MimeMessage(
                     new[] { new MailboxAddress(_emailOptions.SenderName ?? _emailOptions.SenderEmail, _emailOptions.SenderEmail) },
@@ -52,7 +53,7 @@ namespace ReHackt.RazorEmails.Services
             }
         }
 
-        public async Task SendRazorViewEmailAsync<TModel>(string subject, string viewName, TModel model, string recipientEmail, string recipientName = null)
+        public async Task SendRazorViewEmailAsync<TModel>(string subject, string viewName, TModel model, string recipientEmail, string? recipientName = null)
         {
             await SendEmailAsync(subject, await _razorViewToStringRenderer.RenderViewToStringAsync(viewName, model), recipientEmail, recipientName);
         }
@@ -60,8 +61,8 @@ namespace ReHackt.RazorEmails.Services
 
     public interface IEmailService
     {
-        Task SendEmailAsync(string subject, string body, string recipientEmail, string recipientName = null);
+        Task SendEmailAsync(string subject, string body, string recipientEmail, string? recipientName = null);
 
-        Task SendRazorViewEmailAsync<TModel>(string subject, string viewName, TModel model, string recipientEmail, string recipientName = null);
+        Task SendRazorViewEmailAsync<TModel>(string subject, string viewName, TModel model, string recipientEmail, string? recipientName = null);
     }
 }

@@ -7,24 +7,24 @@ namespace ReHackt.RazorEmails.Configuration
 {
     public class TemplateOptions
     {
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         public string ButtonBackgroundColor { get; set; } = "#7FA5DB";
 
         public string ButtonTextColor { get; set; } = "#FFFFFF";
 
         [EmailAddress]
-        public string ContactEmail { get; set; }
+        public string? ContactEmail { get; set; }
 
-        public Link[] FooterLinks { get; set; }
+        public Link[] FooterLinks { get; set; } = Array.Empty<Link>();
 
         public string HeaderBackgroundColor { get; set; } = "#203279";
 
         [DataType(DataType.Url)]
-        public string HeaderLinkUri { get; set; }
+        public string? HeaderLinkUri { get; set; }
 
         [DataType(DataType.ImageUrl)]
-        public string HeaderLogoUri { get; set; }
+        public string? HeaderLogoUri { get; set; }
 
         public string HeadlineColor { get; set; } = "#111111";
 
@@ -32,20 +32,20 @@ namespace ReHackt.RazorEmails.Configuration
 
         public string SupportBackgroundColor { get; set; } = "#D8E8FF";
 
-        [DataType(DataType.Url)]
-        public string SupportLinkUri { get; set; }
-
         public string SupportLinkColor { get; set; } = "#203279";
+
+        [DataType(DataType.Url)]
+        public string? SupportLinkUri { get; set; }
 
         public string TextColor { get; set; } = "#666666";
     }
 
     public class Link
     {
-        public string Text { get; set; }
+        public string? Text { get; set; }
 
         [Required]
         [DataType(DataType.Url)]
-        public string Uri { get; set; }
+        public string? Uri { get; set; }
     }
 }

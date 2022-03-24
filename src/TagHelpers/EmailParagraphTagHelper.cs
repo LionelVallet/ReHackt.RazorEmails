@@ -12,10 +12,10 @@ namespace ReHackt.RazorEmails.TagHelpers
     {
         public EmailParagraphTagHelper(IOptionsMonitor<EmailOptions> emailOptions)
         {
-            Color = emailOptions.CurrentValue.Template.TextColor;
+            Color = emailOptions.CurrentValue.Template?.TextColor;
         }
 
-        public string Color { get; set; }
+        public string? Color { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {

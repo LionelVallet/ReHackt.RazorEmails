@@ -21,7 +21,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddScoped<IEmailService, EmailService>();
         }
 
-        public static IServiceCollection AddRazorEmails(this IServiceCollection services, IConfiguration configuration = null)
+        public static IServiceCollection AddRazorEmails(this IServiceCollection services, IConfiguration? configuration = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
@@ -58,11 +58,12 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             try
             {
+                var smtpOptions = options.Smtp!;
                 using var client = new SmtpClient();
-                client.Connect(options.Smtp.Host, options.Smtp.Port, options.Smtp.EnableSsl);
-                if (!string.IsNullOrEmpty(options.Smtp.Username))
+                client.Connect(smtpOptions.Host, smtpOptions.Port, smtpOptions.EnableSsl);
+                if (!string.IsNullOrEmpty(smtpOptions.Username))
                 {
-                    client.Authenticate(options.Smtp.Username, options.Smtp.Password);
+                    client.Authenticate(smtpOptions.Username, smtpOptions.Password);
                 }
                 client.Disconnect(true);
                 return true;
