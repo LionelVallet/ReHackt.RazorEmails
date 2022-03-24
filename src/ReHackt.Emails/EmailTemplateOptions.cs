@@ -3,9 +3,9 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace ReHackt.RazorEmails.Configuration
+namespace ReHackt.Emails
 {
-    public class TemplateOptions
+    public class EmailTemplateOptions
     {
         public string? Address { get; set; }
 

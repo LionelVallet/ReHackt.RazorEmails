@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Routing;
 
-namespace ReHackt.RazorEmails.Services
+namespace ReHackt.Emails.Services
 {
     public class RazorViewToStringRenderer : IRazorViewToStringRenderer
     {

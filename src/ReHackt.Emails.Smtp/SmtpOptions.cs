@@ -4,7 +4,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace ReHackt.RazorEmails.Configuration
+namespace ReHackt.Emails
 {
     public class SmtpOptions
     {

@@ -3,7 +3,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace ReHackt.RazorEmails.Configuration
+namespace ReHackt.Emails
 {
     public class EmailOptions
     {
@@ -14,9 +14,6 @@ namespace ReHackt.RazorEmails.Configuration
         public string? SenderName { get; set; }
 
         [Required]
-        public SmtpOptions? Smtp { get; set; }
-
-        [Required]
-        public TemplateOptions? Template { get; set; }
+        public EmailTemplateOptions? Template { get; set; }
     }
 }

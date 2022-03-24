@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Lionel Vallet. All rights reserved.
 // Licensed under the Apache License, Version 2.0.
 
-namespace ReHackt.RazorEmails
+namespace ReHackt.Emails
 {
     public static partial class EmailViewDataKeys
     {

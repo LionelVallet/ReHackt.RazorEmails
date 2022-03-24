@@ -3,9 +3,8 @@
 
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Options;
-using ReHackt.RazorEmails.Configuration;
 
-namespace ReHackt.RazorEmails.TagHelpers
+namespace ReHackt.Emails.TagHelpers
 {
     [HtmlTargetElement("email-h2", TagStructure = TagStructure.NormalOrSelfClosing)]
     public class EmailHeadlineTagHelper : TagHelper

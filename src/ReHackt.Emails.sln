@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReHackt.Emails", "ReHackt.Emails\ReHackt.Emails.csproj", "{EC750EF1-6848-4513-AB99-2560D0BB9516}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReHackt.Emails.Smtp", "ReHackt.Emails.Smtp\ReHackt.Emails.Smtp.csproj", "{29A773EB-D24F-4386-9A32-60A39D81848D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC750EF1-6848-4513-AB99-2560D0BB9516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC750EF1-6848-4513-AB99-2560D0BB9516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC750EF1-6848-4513-AB99-2560D0BB9516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC750EF1-6848-4513-AB99-2560D0BB9516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A773EB-D24F-4386-9A32-60A39D81848D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A773EB-D24F-4386-9A32-60A39D81848D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A773EB-D24F-4386-9A32-60A39D81848D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A773EB-D24F-4386-9A32-60A39D81848D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06FD33F4-FFFF-4B17-87BA-86E5A433F508}
+	EndGlobalSection
+EndGlobal

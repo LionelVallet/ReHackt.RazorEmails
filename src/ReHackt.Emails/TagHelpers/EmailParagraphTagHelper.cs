@@ -3,25 +3,23 @@
 
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Options;
-using ReHackt.RazorEmails.Configuration;
 
-namespace ReHackt.RazorEmails.TagHelpers
+namespace ReHackt.Emails.TagHelpers
 {
-    [HtmlTargetElement("email-a", Attributes = nameof(Href), TagStructure = TagStructure.NormalOrSelfClosing)]
-    public class EmailAnchorTagHelper : TagHelper
+    [HtmlTargetElement("email-p", TagStructure = TagStructure.NormalOrSelfClosing)]
+    public class EmailParagraphTagHelper : TagHelper
     {
-        public EmailAnchorTagHelper(IOptionsMonitor<EmailOptions> emailOptions)
+        public EmailParagraphTagHelper(IOptionsMonitor<EmailOptions> emailOptions)
         {
-            Color = emailOptions.CurrentValue.Template?.LinkColor;
+            Color = emailOptions.CurrentValue.Template?.TextColor;
         }
 
         public string? Color { get; set; }
 
-        public string? Href { get; set; }
-
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            if (!string.IsNullOrWhiteSpace(Href))
+            var content = (await output.GetChildContentAsync()).GetContent();
+            if (!string.IsNullOrWhiteSpace(content))
             {
                 output.TagName = "table";
                 output.Attributes.SetAttribute("width", "100%");
@@ -30,10 +28,10 @@ namespace ReHackt.RazorEmails.TagHelpers
                 output.Attributes.SetAttribute("cellpadding", "0");
                 output.Content.SetHtmlContent(
                 $@"<tr>
-                <td bgcolor=""#ffffff"" align=""left"" style=""padding: 0px 30px 20px 30px; color: {Color}; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;"" >
-                    <p style=""margin: 0;""><a href=""{Href}"" target=""_blank"" style=""color: {Color}; word-break: break-all;"">{(await output.GetChildContentAsync()).GetContent()}</a></p>
-                </td>
-            </tr>");
+                    <td bgcolor=""#ffffff"" align=""left"" style=""padding: 0px 30px 20px 30px; color: {Color}; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;"" >
+                        <p style=""margin: 0;"">{content}</p>
+                    </td>
+                </tr>");
                 output.TagMode = TagMode.StartTagAndEndTag;
             }
             else

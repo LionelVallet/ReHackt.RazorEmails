@@ -3,9 +3,8 @@
 
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Options;
-using ReHackt.RazorEmails.Configuration;
 
-namespace ReHackt.RazorEmails.TagHelpers
+namespace ReHackt.Emails.TagHelpers
 {
     [HtmlTargetElement("email-button", Attributes = nameof(Href), TagStructure = TagStructure.NormalOrSelfClosing)]
     public class EmailButtonTagHelper : TagHelper

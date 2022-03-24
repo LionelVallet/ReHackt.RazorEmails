@@ -3,7 +3,7 @@
 
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace ReHackt.RazorEmails.TagHelpers
+namespace ReHackt.Emails.TagHelpers
 {
     [HtmlTargetElement("email-img", Attributes = nameof(Src), TagStructure = TagStructure.WithoutEndTag)]
     public class EmailImageTagHelper : TagHelper

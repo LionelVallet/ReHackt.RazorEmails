@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_").Replace(".Smtp",""))</RootNamespace>
+    <Authors>Lionel Vallet</Authors>
+    <Company>ReHackt</Company>
+    <Copyright>Lionel Vallet</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/LionelVallet/ReHackt.RazorEmails</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/LionelVallet/ReHackt.RazorEmails</RepositoryUrl>
+    <PackageTags>aspnetcore, email, razor, smtp</PackageTags>
+    <PackageReleaseNotes>https://github.com/LionelVallet/ReHackt.RazorEmails/releases</PackageReleaseNotes>
+    <Description>Provides a ReHackt.Emails EmailService using SMTP.</Description>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReHackt.Emails\ReHackt.Emails.csproj" />
+  </ItemGroup>
+
+</Project>
