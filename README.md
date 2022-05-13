@@ -1,4 +1,4 @@
-# ReHackt.RazorEmails
+# This repository has been merged into [ReHackt.Framework](https://github.com/LionelVallet/ReHackt.Framework)
 
 ReHackt.RazorEmails allows you to easily create email templates using ASP.NET Core's Razor syntax. The generated HTML will be compatible with all existing email clients. It includes a service based on [MailKit](https://github.com/jstedfast/MailKit) to send them using SMTP.
 
