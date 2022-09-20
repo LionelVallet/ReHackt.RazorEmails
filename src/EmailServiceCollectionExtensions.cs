@@ -14,18 +14,18 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddRazorEmails(this IServiceCollection services)
         {
-            if (services == null) throw new ArgumentNullException(nameof(services));
-
-            return services
+            return services == null
+                ? throw new ArgumentNullException(nameof(services))
+                : services
                 .AddScoped<IRazorViewToStringRenderer, RazorViewToStringRenderer>()
                 .AddScoped<IEmailService, EmailService>();
         }
 
         public static IServiceCollection AddRazorEmails(this IServiceCollection services, IConfiguration? configuration = null)
         {
-            if (services == null) throw new ArgumentNullException(nameof(services));
-
-            return services
+            return services == null
+                ? throw new ArgumentNullException(nameof(services))
+                : services
                 .AddRazorEmails()
                 .AddOptions<EmailOptions>()
                     .Bind(configuration)
@@ -35,9 +35,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
         public static IServiceCollection AddRazorEmails(this IServiceCollection services, Action<EmailOptions> emailOptions)
         {
-            if (services == null) throw new ArgumentNullException(nameof(services));
-
-            return services
+            return services == null
+                ? throw new ArgumentNullException(nameof(services))
+                : services
                 .AddRazorEmails()
                 .AddOptions<EmailOptions>()
                     .Configure(emailOptions)
@@ -47,8 +47,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static OptionsBuilder<EmailOptions> ValidateEmailOptions(this OptionsBuilder<EmailOptions> optionsBuilder)
         {
-            if (optionsBuilder == null) throw new ArgumentNullException(nameof(optionsBuilder));
-            return optionsBuilder
+            return optionsBuilder == null
+                ? throw new ArgumentNullException(nameof(optionsBuilder))
+                : optionsBuilder
                     .ValidateDataAnnotationsRecursively()
                     .Validate<ILogger<EmailService>>(ValidateSmtpOptions, "Failed to connect to SMTP server")
                     .ValidateOnStart();
