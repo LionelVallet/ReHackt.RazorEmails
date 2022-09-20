@@ -11,7 +11,7 @@
     var unsubscribeUrl = ViewData[EmailViewDataKeys.UnsubscribeUrl] as string;
     var displaySupport = (ViewData[EmailViewDataKeys.DisplaySupport] as bool?) == true;
 
-    var templateOptions = Options.CurrentValue.Template;
+    var templateOptions = Options.CurrentValue.Template!;
     var address = templateOptions.Address;
     var contactEmail = templateOptions.ContactEmail;
     var footerLinks = templateOptions.FooterLinks;
