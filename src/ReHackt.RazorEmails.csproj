@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <LangVersion>10.0</LangVersion>
     <Authors>Lionel Vallet</Authors>
     <Company>ReHackt</Company>
     <Copyright>Lionel Vallet</Copyright>
@@ -14,14 +15,11 @@
     <PackageTags>aspnetcore, email, razor, smtp</PackageTags>
     <PackageReleaseNotes>https://github.com/LionelVallet/ReHackt.RazorEmails/releases</PackageReleaseNotes>
     <Description>Provides an email layout to create email templates with Razor and tag helpers, and a service to send emails using SMTP.</Description>
-    <Version>6.0.1</Version>
+    <Version>6.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MailKit" Version="3.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
